@@ -20,25 +20,29 @@ const testimonials = [
 
 const Testimonials = () => {
     return (
-        <section id="testimonials" className="section" style={{ backgroundColor: 'var(--color-beige)' }}>
-            <div className="container">
-                <h2 className="text-center mb-4" style={{ fontSize: '2.5rem' }}>Lo Que Dicen Nuestros Clientes</h2>
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                    gap: '40px'
-                }}>
+        <section id="testimonials" className="py-24 bg-white">
+            <div className="container mx-auto px-6 md:px-12">
+                <div className="text-center mb-16">
+                    <span className="text-[var(--color-gold)] uppercase tracking-[0.2em] text-sm font-semibold">Testimonios</span>
+                    <h2 className="text-4xl md:text-5xl font-serif font-bold mt-2 text-[var(--color-rich-black)]">La Voz de la Excelencia</h2>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                     {testimonials.map((t, index) => (
-                        <div key={index} style={{
-                            backgroundColor: 'var(--color-white)',
-                            padding: '40px',
-                            textAlign: 'center',
-                            boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
-                            borderTop: '3px solid var(--color-gold)'
-                        }}>
-                            <p style={{ fontStyle: 'italic', marginBottom: '20px', fontSize: '1.1rem' }}>"{t.text}"</p>
-                            <h4 style={{ fontSize: '1rem', marginBottom: '5px' }}>{t.author}</h4>
-                            <span style={{ fontSize: '0.8rem', color: 'var(--color-text)', textTransform: 'uppercase', letterSpacing: '1px' }}>{t.role}</span>
+                        <div key={index} className="relative p-10 bg-gray-50 border-t-4 border-[var(--color-gold)] shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            {/* Quote Icon */}
+                            <div className="absolute top-6 left-6 text-6xl text-[var(--color-gold)] opacity-20 font-serif">"</div>
+
+                            <p className="relative z-10 text-lg text-gray-700 italic mb-8 font-light leading-relaxed">
+                                {t.text}
+                            </p>
+
+                            <div className="border-t border-gray-200 pt-6">
+                                <h4 className="text-xl font-bold text-[var(--color-rich-black)] font-serif">{t.author}</h4>
+                                <span className="text-xs uppercase tracking-widest text-[var(--color-gold)] font-semibold mt-1 block">
+                                    {t.role}
+                                </span>
+                            </div>
                         </div>
                     ))}
                 </div>
