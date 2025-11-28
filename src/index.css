@@ -1,101 +1,110 @@
-:root {
+@import "tailwindcss";
+
+@theme {
   --color-gold: #D4AF37;
-  --color-gold-light: #F1E5AC;
-  --color-black: #1A1A1A;
-  --color-white: #FFFFFF;
-  --color-beige: #F5F5F5;
-  --color-text: #333333;
-  --font-heading: 'Playfair Display', serif;
-  --font-body: 'Lato', sans-serif;
+  --color-gold-light: #F4D06F;
+  --color-gold-dark: #AA8C2C;
+  --color-royal-blue: #002366;
+  --color-midnight: #0F172A;
+  --color-rich-black: #0A0A0A;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+:root {
+  font-family: 'Outfit', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
 
-body {
-  font-family: var(--font-body);
-  background-color: var(--color-white);
-  color: var(--color-text);
-  line-height: 1.6;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: var(--color-rich-black);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  color: var(--color-black);
-  font-weight: 700;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+  font-weight: 500;
+  color: var(--color-gold);
+  text-decoration: inherit;
   transition: color 0.3s ease;
 }
 
-ul {
-  list-style: none;
+a:hover {
+  color: var(--color-gold-light);
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--color-rich-black);
+  color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Cinzel', serif;
+  /* Luxury font if available, fallback to serif */
 }
 
 button {
-  cursor: pointer;
-  border: none;
-  outline: none;
+  border-radius: 0;
+  /* Sharper edges for luxury feel */
+  border: 1px solid var(--color-gold);
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
   font-family: inherit;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.section {
-  padding: 80px 0;
-}
-
-.btn {
-  display: inline-block;
-  padding: 12px 30px;
-  background-color: var(--color-black);
-  color: var(--color-white);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.9rem;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn:hover {
-  background-color: var(--color-gold);
-  transform: translateY(-2px);
-}
-
-.btn-outline {
   background-color: transparent;
-  border: 1px solid var(--color-black);
-  color: var(--color-black);
+  color: var(--color-gold);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
-.btn-outline:hover {
-  background-color: var(--color-black);
-  color: var(--color-white);
+button:hover {
+  background-color: var(--color-gold);
+  color: var(--color-rich-black);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
 }
 
-/* Utility classes */
-.text-center { text-align: center; }
-.mb-1 { margin-bottom: 1rem; }
-.mb-2 { margin-bottom: 2rem; }
-.mb-3 { margin-bottom: 3rem; }
-.mb-4 { margin-bottom: 4rem; }
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
 }
 
-.fade-in {
-  animation: fadeIn 1s ease forwards;
+/* Custom Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-fadeInUp {
+  animation-name: fadeInUp;
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
 }
