@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import watchImg from '../assets/luxury_watch.png';
-import perfumeImg from '../assets/designer_perfume.png';
-import handbagImg from '../assets/leather_handbag.png';
+import banner2 from '../assets/banner2.png';
+import banner1 from '../assets/banner1.png';
+import banner3 from '../assets/banner3.png';
 
 const products = [
   {
     id: 1,
-    image: watchImg,
+    image: banner2,
     title: "Timeless Elegance",
     description: "Discover our exclusive collection of luxury timepieces."
   },
   {
     id: 2,
-    image: perfumeImg,
+    image: banner1,
     title: "Essence of Luxury",
     description: "Fragrances that define sophistication and style."
   },
   {
     id: 3,
-    image: handbagImg,
+    image: banner3,
     title: "Premium Craftsmanship",
     description: "Handcrafted leather accessories for the modern icon."
   }
