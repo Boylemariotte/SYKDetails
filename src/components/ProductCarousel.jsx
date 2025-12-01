@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useCart } from '../context/CartContext';
 import banner2 from '../assets/banner2.png';
 import banner1 from '../assets/banner1.png';
 import banner3 from '../assets/banner3.png';
@@ -8,24 +9,28 @@ const products = [
     id: 1,
     image: banner2,
     title: "Timeless Elegance",
-    description: "Discover our exclusive collection of luxury timepieces."
+    description: "Discover our exclusive collection of luxury timepieces.",
+    price: "$5,000" // Added price for cart
   },
   {
     id: 2,
     image: banner1,
     title: "Essence of Luxury",
-    description: "Fragrances that define sophistication and style."
+    description: "Fragrances that define sophistication and style.",
+    price: "$350" // Added price for cart
   },
   {
     id: 3,
     image: banner3,
     title: "Premium Craftsmanship",
-    description: "Handcrafted leather accessories for the modern icon."
+    description: "Handcrafted leather accessories for the modern icon.",
+    price: "$1,200" // Added price for cart
   }
 ];
 
 const ProductCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -61,8 +66,16 @@ const ProductCarousel = () => {
             <p className="text-lg md:text-2xl max-w-3xl mx-auto font-light text-gray-300 animate-fadeInUp delay-100 tracking-wide">
               {product.description}
             </p>
-            <button className="mt-10 px-10 py-4 border border-[var(--color-gold)] text-[var(--color-gold)] hover:bg-[var(--color-gold)] hover:text-[var(--color-rich-black)] transition-all duration-300 uppercase tracking-[0.2em] text-sm animate-fadeInUp delay-200">
-              Discover More
+            <button
+              onClick={() => addToCart({
+                id: `carousel-${product.id}`, // Unique ID for carousel items
+                name: product.title,
+                price: product.price,
+                image: product.image
+              })}
+              className="mt-10 px-10 py-4 border border-[var(--color-gold)] text-[var(--color-gold)] hover:bg-[var(--color-gold)] hover:text-[var(--color-rich-black)] transition-all duration-300 uppercase tracking-[0.2em] text-sm animate-fadeInUp delay-200"
+            >
+              Agregar al Carrito - {product.price}
             </button>
           </div>
         </div>

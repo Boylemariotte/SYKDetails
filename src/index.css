@@ -7,6 +7,11 @@
   --color-royal-blue: #002366;
   --color-midnight: #0F172A;
   --color-rich-black: #0A0A0A;
+
+  /* Aliases / New Colors for Cart */
+  --color-gold-metallic: #D4AF37;
+  --color-pale-gold: #F4D06F;
+  --color-charcoal-gray: #333333;
 }
 
 :root {

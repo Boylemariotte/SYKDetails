@@ -1,4 +1,5 @@
 import React from 'react';
+import { useCart } from '../context/CartContext';
 import product1 from '../assets/Flor1.jpg';
 import product2 from '../assets/Flor2.jpg';
 import product3 from '../assets/Flor3.jpg';
@@ -28,6 +29,8 @@ const products = [
 ];
 
 const FeaturedProducts = () => {
+    const { addToCart } = useCart();
+
     return (
         <section id="featured" className="py-20 bg-gray-50">
             <div className="container mx-auto px-6 md:px-12">
@@ -51,8 +54,11 @@ const FeaturedProducts = () => {
 
                                 {/* Quick Action */}
                                 <div className="absolute bottom-0 left-0 w-full p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                                    <button className="w-full py-3 bg-white text-[var(--color-rich-black)] hover:bg-[var(--color-gold)] hover:text-white transition-colors duration-300 uppercase tracking-widest text-xs font-bold">
-                                        Ver Detalles
+                                    <button
+                                        onClick={() => addToCart(product)}
+                                        className="w-full py-3 bg-white text-[var(--color-rich-black)] hover:bg-[var(--color-gold)] hover:text-white transition-colors duration-300 uppercase tracking-widest text-xs font-bold"
+                                    >
+                                        Agregar al Carrito
                                     </button>
                                 </div>
                             </div>
