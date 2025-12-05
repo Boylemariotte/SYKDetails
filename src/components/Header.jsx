@@ -4,6 +4,7 @@ import { useCart } from '../context/CartContext';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { toggleCart, cartCount } = useCart();
 
   useEffect(() => {
@@ -26,7 +27,7 @@ const Header = () => {
         : 'bg-transparent py-8 text-white'
         }`}
     >
-      <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
+      <div className="container mx-auto px-6 md:px-12 flex justify-between items-center relative z-50">
         {/* Logo */}
         <div className="text-2xl font-bold tracking-[0.15em] font-serif">
           VIRGO <span className="text-[var(--color-gold)]">ART</span>
@@ -76,12 +77,56 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Menu Button (Placeholder) */}
+        {/* Mobile Menu Button */}
         <div className="md:hidden ml-4">
-          <button className={`text-2xl ${scrolled ? 'text-black' : 'text-white'}`}>
-            ☰
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className={`text-2xl focus:outline-none transition-colors duration-300 ${scrolled || mobileMenuOpen ? 'text-[var(--color-rich-black)]' : 'text-white'}`}
+          >
+            {mobileMenuOpen ? (
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+            )}
           </button>
         </div>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`fixed inset-0 bg-white z-30 transform transition-transform duration-500 ease-in-out md:hidden flex flex-col justify-center items-center ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+      >
+        <nav className="flex flex-col space-y-8 text-center">
+          <Link
+            to="/"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-2xl font-serif font-bold text-[var(--color-rich-black)] hover:text-[var(--color-gold)] transition-colors"
+          >
+            Inicio
+          </Link>
+          <Link
+            to="/catalog"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-2xl font-serif font-bold text-[var(--color-rich-black)] hover:text-[var(--color-gold)] transition-colors"
+          >
+            Catálogo
+          </Link>
+          {['Categorías', 'Testimonios', 'Contacto'].map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-2xl font-serif font-bold text-[var(--color-rich-black)] hover:text-[var(--color-gold)] transition-colors"
+            >
+              {item}
+            </a>
+          ))}
+        </nav>
       </div>
     </header>
   );
