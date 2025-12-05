@@ -11,7 +11,11 @@ const Cart = () => {
 
         let message = "Hola! Me gustaría hacer un pedido:\n\n";
         cartItems.forEach(item => {
+            // Construct full image URL
+            const imageUrl = window.location.origin + item.image;
+
             message += `- ${item.name} x${item.quantity}: $${(parseFloat(item.price.replace(/[^0-9.-]+/g, "")) * item.quantity).toLocaleString()}\n`;
+            message += `  Imagen: ${imageUrl}\n`;
         });
         message += `\n*Total: $${cartTotal.toLocaleString()}*`;
 

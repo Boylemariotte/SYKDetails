@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 
 const Header = () => {
@@ -34,7 +35,17 @@ const Header = () => {
         {/* Navigation - Desktop */}
         <nav className="hidden md:block">
           <ul className="flex space-x-8">
-            {['Colección', 'Categorías', 'Testimonios', 'Contacto'].map((item) => (
+            <li>
+              <Link to="/" className={`text-sm uppercase tracking-widest hover:text-[var(--color-gold)] transition-colors duration-300 ${scrolled ? 'text-gray-800' : 'text-white'}`}>
+                Inicio
+              </Link>
+            </li>
+            <li>
+              <Link to="/catalog" className={`text-sm uppercase tracking-widest hover:text-[var(--color-gold)] transition-colors duration-300 ${scrolled ? 'text-gray-800' : 'text-white'}`}>
+                Catálogo
+              </Link>
+            </li>
+            {['Categorías', 'Testimonios', 'Contacto'].map((item) => (
               <li key={item}>
                 <a
                   href={`#${item.toLowerCase()}`}
