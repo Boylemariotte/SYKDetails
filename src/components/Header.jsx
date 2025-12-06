@@ -35,7 +35,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${scrolled || mobileMenuOpen
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled || mobileMenuOpen
           ? 'bg-white/95 backdrop-blur-md shadow-md py-4 text-[var(--color-rich-black)]'
           : 'bg-transparent py-8 text-white'
           }`}
@@ -110,39 +110,40 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Mobile Menu Overlay - Moved outside header */}
-      <div
-        className={`fixed inset-0 bg-white z-40 transform transition-transform duration-500 ease-in-out md:hidden flex flex-col justify-center items-center ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
-        style={{ height: '100dvh' }}
-      >
-        <nav className="flex flex-col space-y-8 text-center">
-          <Link
-            to="/"
-            onClick={() => setMobileMenuOpen(false)}
-            className="text-2xl font-serif font-bold text-[var(--color-rich-black)] hover:text-[var(--color-gold)] transition-colors"
-          >
-            Inicio
-          </Link>
-          <Link
-            to="/catalog"
-            onClick={() => setMobileMenuOpen(false)}
-            className="text-2xl font-serif font-bold text-[var(--color-rich-black)] hover:text-[var(--color-gold)] transition-colors"
-          >
-            Catálogo
-          </Link>
-          {['Categorías', 'Testimonios', 'Contacto'].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
+      {/* Mobile Menu Overlay - No Animation */}
+      {mobileMenuOpen && (
+        <div
+          className="fixed inset-0 bg-white z-40 md:hidden flex flex-col justify-center items-center"
+          style={{ height: '100dvh' }}
+        >
+          <nav className="flex flex-col space-y-8 text-center">
+            <Link
+              to="/"
               onClick={() => setMobileMenuOpen(false)}
               className="text-2xl font-serif font-bold text-[var(--color-rich-black)] hover:text-[var(--color-gold)] transition-colors"
             >
-              {item}
-            </a>
-          ))}
-        </nav>
-      </div>
+              Inicio
+            </Link>
+            <Link
+              to="/catalog"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-2xl font-serif font-bold text-[var(--color-rich-black)] hover:text-[var(--color-gold)] transition-colors"
+            >
+              Catálogo
+            </Link>
+            {['Categorías', 'Testimonios', 'Contacto'].map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-2xl font-serif font-bold text-[var(--color-rich-black)] hover:text-[var(--color-gold)] transition-colors"
+              >
+                {item}
+              </a>
+            ))}
+          </nav>
+        </div>
+      )}
     </>
   );
 };
