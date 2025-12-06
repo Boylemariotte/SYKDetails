@@ -49,8 +49,8 @@ const Catalog = () => {
                                 key={cat}
                                 onClick={() => setSelectedCategory(cat)}
                                 className={`px-6 py-2 text-sm uppercase tracking-wider transition-all duration-300 border ${selectedCategory === cat
-                                        ? 'bg-[var(--color-gold)] text-white border-[var(--color-gold)]'
-                                        : 'bg-transparent text-gray-600 border-gray-300 hover:border-[var(--color-gold)] hover:text-[var(--color-gold)]'
+                                    ? 'bg-[var(--color-gold)] text-white border-[var(--color-gold)]'
+                                    : 'bg-transparent text-gray-600 border-gray-300 hover:border-[var(--color-gold)] hover:text-[var(--color-gold)]'
                                     }`}
                             >
                                 {cat}
@@ -61,39 +61,39 @@ const Catalog = () => {
 
                 {/* Product Grid */}
                 {filteredProducts.length > 0 ? (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                         {filteredProducts.map(product => (
                             <div key={product.id} className="group bg-white shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col">
-                                <Link to={`/product/${product.id}`} className="relative h-80 overflow-hidden block">
+                                <Link to={`/product/${product.id}`} className="relative h-64 overflow-hidden block">
                                     <img
                                         src={product.image}
                                         alt={product.name}
                                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                                     />
                                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                                        <span className="text-white border border-white px-6 py-2 uppercase tracking-widest text-sm hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                                        <span className="text-white border border-white px-4 py-2 uppercase tracking-widest text-xs hover:bg-white hover:text-black transition-colors">Ver</span>
                                     </div>
                                 </Link>
 
-                                <div className="p-6 text-center flex-grow flex flex-col justify-between">
+                                <div className="p-4 text-center flex-grow flex flex-col justify-between">
                                     <div>
-                                        <span className="block text-xs uppercase tracking-widest text-[var(--color-gold)] mb-2 font-semibold">
+                                        <span className="block text-[10px] uppercase tracking-widest text-[var(--color-gold)] mb-1 font-semibold">
                                             {product.category}
                                         </span>
                                         <Link to={`/product/${product.id}`}>
-                                            <h3 className="text-xl font-serif font-bold mb-2 text-[var(--color-rich-black)] hover:text-[var(--color-gold)] transition-colors">
+                                            <h3 className="text-lg font-serif font-bold mb-1 text-[var(--color-rich-black)] hover:text-[var(--color-gold)] transition-colors">
                                                 {product.name}
                                             </h3>
                                         </Link>
-                                        <p className="text-lg text-gray-600 font-light mb-4">
+                                        <p className="text-base text-gray-600 font-light mb-3">
                                             ${product.price}
                                         </p>
                                     </div>
                                     <button
                                         onClick={() => addToCart(product)}
-                                        className="w-full py-3 border border-[var(--color-rich-black)] text-[var(--color-rich-black)] hover:bg-[var(--color-rich-black)] hover:text-white transition-all duration-300 uppercase tracking-widest text-xs font-bold"
+                                        className="w-full py-2 border border-[var(--color-rich-black)] text-[var(--color-rich-black)] hover:bg-[var(--color-rich-black)] hover:text-white transition-all duration-300 uppercase tracking-widest text-[10px] font-bold"
                                     >
-                                        Agregar al Carrito
+                                        Agregar
                                     </button>
                                 </div>
                             </div>

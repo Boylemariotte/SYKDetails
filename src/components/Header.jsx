@@ -20,9 +20,21 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${scrolled
+      className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${scrolled || mobileMenuOpen
         ? 'bg-white/95 backdrop-blur-md shadow-md py-4 text-[var(--color-rich-black)]'
         : 'bg-transparent py-8 text-white'
         }`}

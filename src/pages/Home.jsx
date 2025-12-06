@@ -5,16 +5,29 @@ import FeaturedProducts from '../components/FeaturedProducts';
 import Process from '../components/Process';
 import Categories from '../components/Categories';
 import Testimonials from '../components/Testimonials';
+import useScrollReveal from '../hooks/useScrollReveal';
 
 const Home = () => {
+    useScrollReveal();
+
     return (
         <>
             <Hero />
-            <ProductCarousel />
-            <FeaturedProducts />
-            <Process />
-            <Categories />
-            <Testimonials />
+            <div className="reveal">
+                <ProductCarousel />
+            </div>
+            <div className="reveal">
+                <FeaturedProducts />
+            </div>
+            <div className="reveal">
+                <Process />
+            </div>
+            <div className="reveal">
+                <Categories />
+            </div>
+            <div className="reveal">
+                <Testimonials />
+            </div>
         </>
     );
 };
