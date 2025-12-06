@@ -110,7 +110,7 @@ const Header = () => {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-white z-30 transform transition-transform duration-500 ease-in-out md:hidden flex flex-col justify-center items-center ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`fixed top-0 left-0 w-full h-full bg-white z-45 transform transition-transform duration-500 ease-in-out md:hidden flex flex-col justify-center items-center ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
       >
         <nav className="flex flex-col space-y-8 text-center">
