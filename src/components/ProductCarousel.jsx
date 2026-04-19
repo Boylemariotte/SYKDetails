@@ -9,22 +9,19 @@ const products = [
     id: 1,
     image: banner2,
     title: "Timeless Elegance",
-    description: "Discover our exclusive collection of luxury timepieces.",
-    price: "$5,000" // Added price for cart
+    description: "Discover our exclusive collection of luxury timepieces."
   },
   {
     id: 2,
     image: banner1,
     title: "Essence of Luxury",
-    description: "Fragrances that define sophistication and style.",
-    price: "$350" // Added price for cart
+    description: "Fragrances that define sophistication and style."
   },
   {
     id: 3,
     image: banner3,
     title: "Premium Craftsmanship",
-    description: "Handcrafted leather accessories for the modern icon.",
-    price: "$1,200" // Added price for cart
+    description: "Handcrafted leather accessories for the modern icon."
   }
 ];
 
@@ -70,12 +67,11 @@ const ProductCarousel = () => {
               onClick={() => addToCart({
                 id: `carousel-${product.id}`, // Unique ID for carousel items
                 name: product.title,
-                price: product.price,
                 image: product.image
               })}
               className="mt-10 px-10 py-4 border border-[var(--color-gold)] text-[var(--color-gold)] hover:bg-[var(--color-gold)] hover:text-[var(--color-rich-black)] transition-all duration-300 uppercase tracking-[0.2em] text-sm animate-fadeInUp delay-200"
             >
-              Agregar al Carrito - {product.price}
+              Agregar al Carrito
             </button>
           </div>
         </div>

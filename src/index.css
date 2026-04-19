@@ -42,11 +42,9 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: var(--color-rich-black);
+  background: linear-gradient(135deg, #000000 0%, var(--color-rich-black) 40%, var(--color-midnight) 100%);
   color: white;
 }
 

@@ -8,21 +8,18 @@ const products = [
     {
         id: 1,
         name: 'Eternidad Dorada',
-        price: '$1,200',
         image: product1,
         category: 'Bodas'
     },
     {
         id: 2,
         name: 'Éxito Esculpido',
-        price: '$2,500',
         image: product2,
         category: 'Corporativo'
     },
     {
         id: 3,
         name: 'Legado Escrito',
-        price: '$850',
         image: product3,
         category: 'Aniversario'
     }
@@ -35,8 +32,7 @@ const FeaturedProducts = () => {
         <section id="featured" className="py-20 bg-gray-50">
             <div className="container mx-auto px-6 md:px-12">
                 <div className="text-center mb-16">
-                    <span className="text-[var(--color-gold)] uppercase tracking-[0.2em] text-sm font-semibold">Nuestra Selección</span>
-                    <h2 className="text-4xl md:text-5xl font-serif font-bold mt-2 text-[var(--color-rich-black)]">Colección Destacada</h2>
+                    <h2 className="text-4xl md:text-5xl font-serif font-bold text-[var(--color-rich-black)]">Colección Destacada</h2>
                     <div className="w-24 h-1 bg-[var(--color-gold)] mx-auto mt-6"></div>
                 </div>
 
@@ -71,9 +67,6 @@ const FeaturedProducts = () => {
                                 <h3 className="text-2xl font-serif font-bold mb-3 text-[var(--color-rich-black)] group-hover:text-[var(--color-gold)] transition-colors duration-300">
                                     {product.name}
                                 </h3>
-                                <p className="text-lg text-gray-600 font-light mb-0">
-                                    {product.price}
-                                </p>
                             </div>
                         </div>
                     ))}

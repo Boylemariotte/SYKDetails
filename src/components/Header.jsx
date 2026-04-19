@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { toggleCart, cartCount } = useCart();
+  const location = useLocation();
+  const isCatalogPage = location.pathname === '/catalog';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,8 +44,11 @@ const Header = () => {
       >
         <div className="container mx-auto px-6 md:px-12 flex justify-between items-center relative z-50">
           {/* Logo */}
-          <div className="text-2xl font-bold tracking-[0.15em] font-serif">
-            VIRGO <span className="text-[var(--color-gold)]">ART</span>
+          <div className="flex items-center text-2xl font-bold tracking-[0.15em] font-serif">
+            <span className={scrolled || isCatalogPage ? "text-black" : "text-white"}>K</span><span className="text-[var(--color-gold)]">&</span><span className={scrolled || isCatalogPage ? "text-black" : "text-white"}>M</span>
+            <span className="text-sm font-light tracking-wider ml-2">
+              <span className={scrolled || isCatalogPage ? "text-black" : "text-white"}>Eternal</span> <span className="text-[var(--color-gold)]">&</span> <span className={scrolled || isCatalogPage ? "text-black" : "text-white"}>Love</span>
+            </span>
           </div>
 
           {/* Navigation - Desktop */}

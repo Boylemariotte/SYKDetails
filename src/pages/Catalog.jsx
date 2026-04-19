@@ -81,13 +81,10 @@ const Catalog = () => {
                                             {product.category}
                                         </span>
                                         <Link to={`/product/${product.id}`}>
-                                            <h3 className="text-lg font-serif font-bold mb-1 text-[var(--color-rich-black)] hover:text-[var(--color-gold)] transition-colors">
+                                            <h3 className="text-lg font-serif font-bold mb-3 text-[var(--color-rich-black)] hover:text-[var(--color-gold)] transition-colors">
                                                 {product.name}
                                             </h3>
                                         </Link>
-                                        <p className="text-base text-gray-600 font-light mb-3">
-                                            ${product.price}
-                                        </p>
                                     </div>
                                     <button
                                         onClick={() => addToCart(product)}

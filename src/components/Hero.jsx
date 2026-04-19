@@ -5,7 +5,7 @@ const Hero = () => {
     return (
         <section className="relative h-screen flex items-center overflow-hidden bg-[var(--color-rich-black)]">
             {/* Background Elements */}
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[var(--color-midnight)] to-transparent opacity-50 z-0"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-black via-[var(--color-rich-black)] to-[var(--color-midnight)] opacity-90 z-0"></div>
 
             <div className="container mx-auto px-6 md:px-12 relative z-10 h-full flex flex-col md:flex-row items-center justify-between">
                 {/* Text Content */}
@@ -15,7 +15,7 @@ const Hero = () => {
                         <span className="text-[var(--color-gold)] italic">Eterniza</span> el Momento.
                     </h1>
                     <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-lg animate-fadeInUp delay-100 font-light tracking-wide">
-                        Piezas exclusivas diseñadas para celebrar los hitos más importantes de la vida. Bodas, aniversarios y eventos corporativos.
+                       Ofrecemos detalles exclusivos que transforman momentos especiales en recuerdos eternos, pensados para quienes valoran el buen gusto, la estética y la excelencia.
                     </p>
                     <div className="animate-fadeInUp delay-200">
                         <button className="px-8 py-3 border border-[var(--color-gold)] text-[var(--color-gold)] hover:bg-[var(--color-gold)] hover:text-[var(--color-rich-black)] transition-all duration-300 uppercase tracking-widest text-sm">

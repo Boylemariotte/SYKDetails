@@ -52,10 +52,7 @@ const ProductDetail = () => {
                         <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-[var(--color-rich-black)]">
                             {product.name}
                         </h1>
-                        <p className="text-3xl font-light text-gray-800 mb-8">
-                            ${product.price}
-                        </p>
-
+                        
                         <div className="w-24 h-1 bg-[var(--color-gold)] mb-8"></div>
 
                         <p className="text-gray-600 leading-relaxed mb-10 text-lg">
