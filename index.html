@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K&M Eternal & Love</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-k">K</span><span class="logo-amp">&</span><span class="logo-m">M</span>
+                <span class="logo-subtitle">
+                    <span class="logo-eternal">Eternal</span> <span class="logo-amp">&</span> <span class="logo-love">Love</span>
+                </span>
+            </div>
+            
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li><a href="#categorias">Categorías</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions">
+                <button class="cart-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+            
+            <button class="mobile-menu-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-nav">
+            <a href="#inicio">Inicio</a>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#categorias">Categorías</a>
+            <a href="#testimonios">Testimonios</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>
+                        Regala Arte,<br />
+                        <span class="hero-highlight">Eterniza</span> el Momento.
+                    </h1>
+                    <p>
+                        Ofrecemos detalles exclusivos que transforman momentos especiales en recuerdos eternos, pensados para quienes valoran el buen gusto, la estética y la excelencia.
+                    </p>
+                    <button class="hero-btn">Explorar Colección</button>
+                </div>
+                <div class="hero-image">
+                    <div class="image-frame">
+                        <img src="assets/hero.png" alt="Luxury Art Piece" alt="Arte de lujo">
+                        <div class="frame-decoration"></div>
+                        <div class="gold-accent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured" id="catalogo">
+        <div class="container">
+            <div class="section-header">
+                <h2>Colección Destacada</h2>
+                <div class="gold-line"></div>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/Flor1.jpg" alt="Eternidad Dorada">
+                        <div class="product-overlay">
+                            <button class="product-btn">Ver</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Bodas</span>
+                        <h3>Eternidad Dorada</h3>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/Flor2.jpg" alt="Éxito Esculpido">
+                        <div class="product-overlay">
+                            <button class="product-btn">Ver</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Corporativo</span>
+                        <h3>Éxito Esculpido</h3>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/Flor3.jpg" alt="Legado Escrito">
+                        <div class="product-overlay">
+                            <button class="product-btn">Ver</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Aniversario</span>
+                        <h3>Legado Escrito</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <button class="view-all-btn">Ver Toda la Colección</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process" id="categorias">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">El Proceso</span>
+                <h2>Cómo Creamos Tu Detalle</h2>
+                <div class="gold-line"></div>
+            </div>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.4 2.245 4.5 4.5 0 0 0 8.4-2.245c0-.399-.077-.78-.22-1.128Zm0 0a15.998 15.998 0 0 0 3.388-1.62m-5.043-.025a15.994 15.994 0 0 1 1.622-3.395m3.42 3.42a15.995 15.995 0 0 0 4.764-4.648l3.876-5.814a1.151 1.151 0 0 0-1.597-1.597L14.146 6.32a15.996 15.996 0 0 0-4.649 4.763m3.42 3.42a6.776 6.776 0 0 0-3.42-3.42" />
+                        </svg>
+                    </div>
+                    <div class="step-number">01</div>
+                    <h3>Elige tu Estilo</h3>
+                    <p>Explora la colección y elige la base perfecta para tu obra maestra.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                        </svg>
+                    </div>
+                    <div class="step-number">02</div>
+                    <h3>Personaliza</h3>
+                    <p>Añade nombres, fechas o mensajes especiales. Hacemos realidad tu visión.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 0 1-1.5 1.5H4.5a1.5 1.5 0 0 1-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 1 0 9.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1 1 14.625 7.5H12" />
+                        </svg>
+                    </div>
+                    <div class="step-number">03</div>
+                    <h3>Recibe Magia</h3>
+                    <p>Enviamos tu detalle personalizado con un empaque de lujo, listo para sorprender.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-k">K</span><span class="logo-amp">&</span><span class="logo-m">M</span>
+                    <div class="logo-subtitle">
+                        <span class="logo-eternal">Eternal</span> <span class="logo-amp">&</span> <span class="logo-love">Love</span>
+                    </div>
+                </div>
+                <p>&copy; 2024 K&M Eternal & Love. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
