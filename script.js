@@ -66,14 +66,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Cart Counter (simple implementation)
-let cartCount = 0;
-const cartCountElement = document.querySelector('.cart-count');
+// Cart functionality
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function updateCartCount() {
+  const cartCountElement = document.querySelector('.cart-count');
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
   if (cartCountElement) {
-    cartCountElement.textContent = cartCount;
-    cartCountElement.style.display = cartCount > 0 ? 'inline-flex' : 'none';
+    cartCountElement.textContent = totalItems;
+    cartCountElement.style.display = totalItems > 0 ? 'inline-flex' : 'none';
   }
 }
 
@@ -81,8 +82,6 @@ function updateCartCount() {
 document.querySelectorAll('.product-btn').forEach(btn => {
   btn.addEventListener('click', (e) => {
     e.preventDefault();
-    cartCount++;
-    updateCartCount();
     
     // Simple feedback
     const originalText = btn.textContent;
